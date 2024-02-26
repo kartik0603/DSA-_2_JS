@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+
+        var n = prompt("Enter Any Number for Factorial trailing Zeros:");
+    
+        function CountZerosFact(n) {
+            let res = 0;
+            for (let i = 5; i <= n; i = i * 5) {
+                res = res + Math.floor(n / i);
+            }
+            return res; 
+        }
+        
+        var zeros = CountZerosFact(n);
+        console.log("Number of trailing zeros in factorial of", n, "is:", zeros);
+
+        document.write("Factorial of " +  " "  + n +  " "  + "ends with tariling ZEROS are" +  " " + CountZerosFact(n));
+
+    
+    </script>
+    
+</body>
+</html>
