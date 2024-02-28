@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LCM </title>
+</head>
+<body>
+
+    <script>
+        var a = prompt("Enter Number 1");
+        var b = prompt("Enter Number 2");
+    
+        function gcd(a, b) {
+            if (b === 0)
+                return a;
+            return gcd(b, a % b);
+        }
+    
+        function myLCM(a, b) {
+            return (a * b) / gcd(a, b);
+        }
+    
+        document.write("LCM of " + a + " and " + b + " is " + myLCM(a, b) + "<br>" );
+       
+    </script>
+    
+    
+</body>
+</html>

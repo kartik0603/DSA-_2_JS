@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LCM</title>
+</head>
+<body>
+    <script>
+        var a = prompt("Enter Number 1");
+        var b = prompt("Enter Number 2");
+    
+        function myLCM(a, b)
+         {
+            let res = Math.max(a, b);
+            while (true)
+             {
+                if (res % a === 0 && res % b === 0)
+                {
+                    return res;
+                }
+                res++;
+            }
+        }
+    
+        document.write("LCM of " + a + " and " + b + " is " + myLCM(a, b));
+    
+    </script>
+    
+</body>
+</html>
