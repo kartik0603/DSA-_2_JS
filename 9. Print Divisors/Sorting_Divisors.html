@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sorted Diviosrs</title>
+</head>
+
+<body>
+    <!-- <script>
+        var n = prompt("Enter Any Number:-");
+    
+        function printDivisors(n) 
+        {
+            var divisors = [];
+            for (let i = 1; i * i < n; i++)
+             {
+                if (n % i === 0)
+                 {
+                    divisors.push(i);
+                    
+                 }
+            }
+                for(i=n ; i>=1 ;i--)
+                {
+                    if(n % i ===0)
+                    {
+                        divisors.push(n / i);
+
+                    }
+                }
+            
+            return divisors;
+
+            
+        }
+    
+        var divisorsArray = printDivisors(parseInt(n));
+        document.write("Divisors of " + n + " are " + divisorsArray.join(", "));
+    </script> -->
+
+    <script>
+        var n = prompt("Enter Any Number:-");
+
+        function printDivisors(n) {
+            var divisors = [];
+            for (let i = 1; i * i < n; i++) {
+                if (n % i === 0) {
+                    divisors.push(i);
+                }
+            }
+            for (let i = divisors.length - 1; i >= 0; i--) {
+                if (n / divisors[i] !== divisors[i]) {
+                    divisors.push(n / divisors[i]);
+                }
+            }
+            return divisors;
+        }
+
+        var divisorsArray = printDivisors(parseInt(n));
+        document.write("Divisors of " + n + " are " + divisorsArray.join(", "));
+    </script>
+</body>
+
+</html>
