@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prime Number Up To N Simple Solution</title>
+</head>
+
+<body>
+    <h2>Prime Number Series</h2>
+    <script>
+        function isPrime(num) {
+            if (num <= 1) return false;
+            if (num <= 3) return true;
+
+            if (num % 2 === 0 || num % 3 === 0) return false;
+
+            for (let i = 5; i * i <= num; i += 6) {
+                if (num % i === 0 || num % (i + 2) === 0) return false;
+            }
+
+            return true;
+        }
+
+        function printPrimesUpToN() {
+            const n = parseInt(prompt("Enter a number:"));
+
+            let isPrimeArray = new Array(n + 1).fill(true);
+
+            for (let i = 2; i * i <= n; i++) {
+                if (isPrimeArray[i]) {
+                    for (let j = i * i; j <= n; j = j + i) {
+                        isPrimeArray[j] = false;
+                    }
+                }
+            }
+
+            const primeList = document.createElement("ul");
+            for (let i = 2; i <= n; i++) {
+                if (isPrimeArray[i]) {
+                    console.log(i);
+                    const listItem = document.createElement("li");
+                    listItem.textContent = i;
+                    primeList.appendChild(listItem);
+                }
+            }
+
+            document.body.appendChild(primeList);
+        }
+
+        printPrimesUpToN();
+    </script>
+</body>
+
+</html>
+
+
+</body>
+
+</html>
