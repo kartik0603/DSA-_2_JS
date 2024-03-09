@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Count Digits</title>
+</head>
+
+<body>
+    <script>
+        var x = prompt("Enter Digits");
+
+        function countDigits(x) {
+            let res = 0;
+            while (x > 0) {
+                x = Math.floor(x / 10);
+                res++;
+            }
+            return res;
+        }
+
+        document.write(
+            "Number of Digits in " + x + " are " + countDigits(parseInt(x))
+        );
+    </script>
+</body>
+
+</html>

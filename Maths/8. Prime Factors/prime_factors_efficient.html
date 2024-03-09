@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Prime Factors Effficient Solution</title>
+</head>
+
+<body>
+    <script>
+        var n = prompt("Enter Number");
+    
+        function primeFactors(n) {
+            if (n <= 1) {
+                return [];
+            }
+    
+            let factors = [];
+    
+            for (let i = 2; i * i <= n; i++) {
+                while (n % i === 0) {
+                    factors.push(i);
+                    n = n / i;
+                }
+            }
+    
+            if (n > 1) {
+                factors.push(n);
+            }
+    
+            return factors;
+        }
+    
+        var factors = primeFactors(parseInt(n));
+        document.write("Prime Factors of " + n + " are " + factors.join(", "));
+    </script>
+    
+    
+</body>
+
+</html>
